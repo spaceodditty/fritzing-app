@@ -36,6 +36,15 @@ Some of those don't need C++ skills, like reproducing an issue on a certain plat
 
 * **translations** - Language translations
 
+## Third-party parts libraries
+
+Additional parts are available directly from hardware vendors:
+
+* [Adafruit Fritzing Library](https://github.com/adafruit/Fritzing-Library)
+* [SparkFun Fritzing Parts](https://github.com/sparkfun/Fritzing_Parts)
+
+Release packages built with the scripts in this repository include the vendors' published `.fzbz` bins in the `third-party-parts` folder. Open a bin in Fritzing, then use **Save Bin** in the Parts palette to keep it available. These libraries remain separate from the core parts database to avoid part ID conflicts and to preserve their original provenance. Vendor parts are supplied by their respective authors without endorsement or a correctness guarantee. See [THIRD_PARTY_PARTS.md](THIRD_PARTY_PARTS.md) for pinned revisions, licenses, and packaging details.
+
 ## Credits
 
 The Fritzing app was maintained by the Friends-of-Fritzing e.V., a non-profit foundation based in Berlin, Germany. The project has grown out of a state-funded research project at the [Interaction Design Lab](http://idl.fh-potsdam.de) at [Potsdam University of Applied Sciences](http://fh-potsdam.de). 

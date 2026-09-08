@@ -1,0 +1,7 @@
+--- a/src/include/cppduals/duals/dual
++++ b/src/include/cppduals/duals/dual
+@@ -442,4 +442,0 @@
+-/// Duals are compound types.
+-template <class T>
+-struct is_compound<duals::dual<T>> : true_type {};
+-
