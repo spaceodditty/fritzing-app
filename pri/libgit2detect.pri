@@ -19,7 +19,15 @@
 
 # Use libgit2 1.7.1 ( https://github.com/libgit2/libgit2/pull/6471 )
 LIBGIT_VERSION=1.7.1
-LIBGITPATH = $$absolute_path($$_PRO_FILE_PWD_/../libgit2-$$LIBGIT_VERSION)
+defined(libgit_root, var) {
+	exists($$libgit_root) {
+		LIBGITPATH = $$absolute_path($$libgit_root)
+	} else {
+		error("requested libgit_root $$libgit_root does not exist")
+	}
+} else {
+	LIBGITPATH = $$absolute_path($$_PRO_FILE_PWD_/../libgit2-$$LIBGIT_VERSION)
+}
 
 unix:!macx {
 	LIBGIT_STATIC = false
@@ -80,4 +88,3 @@ unix {
 		#PKGCONFIG += libgit2
 	}
 }
-

@@ -30,7 +30,8 @@ echo "$supportdir"
 
 echo ">> copy support files"
 cd "$workingdir"
-cp -rf sketches help translations INSTALL.txt README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$supportdir/"
+cp -rf sketches help translations INSTALL.txt README.md THIRD_PARTY_PARTS.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$supportdir/"
+python3 tools/package-third-party-parts.py "$supportdir/third-party-parts"
 
 echo ">> clean translations"
 cd "$supportdir"

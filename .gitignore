@@ -9,6 +9,8 @@ phoenix.pro.user
 /release*
 /build*
 /debug*
+/.build/
+/aqtinstall.log
 *.user
 *.user*
 

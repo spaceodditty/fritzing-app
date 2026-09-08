@@ -2,22 +2,16 @@
 
 message("Using fritzing Clipper 1 detect script.")
 
-unix {
-    message("including Clipper1 library on linux or mac")
-
-    exists($$absolute_path($$PWD/../../Clipper1-6.4.2)) {
-	            CLIPPER1 = $$absolute_path($$PWD/../../Clipper1-6.4.2)
-				message("found Clipper1 in $${CLIPPER1}")
-			}
+defined(clipper1_root, var) {
+    CLIPPER1 = $$absolute_path($$clipper1_root)
+} else {
+    CLIPPER1 = $$absolute_path($$PWD/../../Clipper1-6.4.2)
 }
 
-win32 {
-    message("including Clipper1 library on windows")
-
-    exists($$absolute_path($$PWD/../../Clipper1-6.4.2)) {
-        CLIPPER1 = $$absolute_path($$PWD/../../Clipper1-6.4.2)
-                    message("found Clipper1 in $${CLIPPER1}")
-            }
+exists($$CLIPPER1/include/polyclipping/clipper.hpp) {
+    message("found Clipper1 in $${CLIPPER1}")
+} else {
+    error("Clipper1 include path not found in $${CLIPPER1}/include/polyclipping")
 }
 
 message("including $$absolute_path($${CLIPPER1}/include)")
